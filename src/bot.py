@@ -60,8 +60,9 @@ def any_msg(update: Update, context: CallbackContext) -> None:
         return
     msg = f"""
 Hello *{update.effective_user.first_name}*
-To get result send message like
-resultde <EXAM> <YEAR> <BOARD> <ROLL> <REGISTRATION NO>
+To get result follow the message format
+
+```resultde <EXAM> <YEAR> <BOARD> <ROLL> <REGISTRATION NO>```
 example: *hsc 2022 raj 101010 10202190342*
 Use first three letters of board, i.e.,
 Barisal -> bar
