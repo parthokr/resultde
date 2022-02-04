@@ -62,7 +62,7 @@ def any_msg(update: Update, context: CallbackContext) -> None:
 Hello {update.effective_user.first_name}
 To get result send message like
 resultde <EXAM> <YEAR> <BOARD> <ROLL> <REGISTRATION NO>
-example: hsc 2022 raj 101010 10202190342
+example: *hsc 2022 raj 101010 10202190342*
 Use first three letters of board, i.e.,
 Barisal -> bar
 Chittagong -> chi
@@ -79,9 +79,10 @@ DIBS -> dib
 
 Note: Case doesn't matter. You can use any case.
 
+Send **abar** or **retry** to resend last message
 If you find any issue with this bot feel free to raise an issue at <url>
 """
-    update.message.reply_text(msg)
+    update.message.reply_text(msg, parse_mode=telegram.ParseMode.MARKDOWN)
 
 
 updater = Updater(TOKEN)
