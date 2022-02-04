@@ -1,14 +1,14 @@
 import os
 
 import telegram.ext
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler
 
 from fetch_result import get_result
 
-load_dotenv()
-TOKEN = os.environ.get("TOKEN")
+# load_dotenv()
+TOKEN = os.environ.get("RESULTDE_TOKEN")
 
 import logging
 
