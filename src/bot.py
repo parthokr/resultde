@@ -79,10 +79,10 @@ DIBS -> dib
 
 Note: Case doesn't matter. You can use any case.
 
-Send **abar** or **retry** to resend last message
+Send *abar** or **retry** to resend last message
 If you find any issue with this bot feel free to raise an issue at <url>
 """
-    update.message.reply_text(msg, parse_mode=telegram.ParseMode.MARKDOWN)
+    update.message.reply_text(msg, parse_mode=telegram.ParseMode.MARKDOWN_V2)
 
 
 updater = Updater(TOKEN)
