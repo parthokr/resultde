@@ -63,7 +63,7 @@ Hello *{update.effective_user.first_name}*
 To get result follow the message format
 ```resultde <EXAM> <YEAR> <BOARD> <ROLL> <REGISTRATION NO>```
 
-example: *hsc 2022 raj 101010 10202190342*
+example: *hsc 2021 raj 654321 987654321*
 Use first three letters of board, i.e.,
 Barisal -> bar
 Chittagong -> chi
