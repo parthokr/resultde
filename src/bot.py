@@ -12,13 +12,15 @@ TOKEN = os.environ.get("TOKEN")
 
 import logging
 
-
 # logging.basicConfig(level=logging.DEBUG,
 #                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
+cache = {}
+
+
 def any_msg(update: Update, context: CallbackContext) -> None:
-    cache = {}
+    global cache
     split_msg = update.message.text.split(' ')
     if split_msg[0] == 'retry' or split_msg[0] == 'abar':
         split_msg = cache[update.effective_user.id]
