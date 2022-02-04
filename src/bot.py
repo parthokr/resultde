@@ -81,7 +81,7 @@ DIBS ➡  dib
 Note: Case doesn't matter. You can use any case.
 
 Send __abar__ or __retry__ to resend last message
-If you find any issue with this bot feel free to raise an issue at <url>
+If you find any issue with this bot feel free to raise an issue at https://github.com/parthokr/resultde/issues
 """
     update.message.reply_text(msg, parse_mode=telegram.ParseMode.MARKDOWN)
 
