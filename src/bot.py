@@ -73,6 +73,8 @@ Technical -> tec
 DIBS -> dib
 
 Note: Case doesn't matter. You can use any case.
+
+If you find any issue with this bot feel free to raise an issue at <url>
 """
     update.message.reply_text(msg)
 
