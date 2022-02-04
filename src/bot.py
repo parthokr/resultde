@@ -18,7 +18,10 @@ import logging
 
 
 def any_msg(update: Update, context: CallbackContext) -> None:
+    cache = {}
     split_msg = update.message.text.split(' ')
+    if split_msg[0] == 'retry' or split_msg[0] == 'abar':
+        split_msg = cache[update.effective_user.id]
     board_dict = {
         'bar': 'barisal',
         'chi': 'chittagong',
@@ -50,9 +53,9 @@ def any_msg(update: Update, context: CallbackContext) -> None:
             print(e)
             result = "Something went wrong..."
 
+        cache[update.effective_user.id] = split_msg
         update.message.reply_text(result)
         return
-
     msg = f"""
 Hello {update.effective_user.first_name}
 To get result send message like
