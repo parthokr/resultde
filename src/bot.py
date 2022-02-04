@@ -59,7 +59,6 @@ def any_msg(update: Update, context: CallbackContext) -> None:
         update.message.reply_text(result)
         return
     msg = f"""
-## Welcome to ResultDe
 Hello *{update.effective_user.first_name}*
 To get result send message like
 resultde <EXAM> <YEAR> <BOARD> <ROLL> <REGISTRATION NO>
