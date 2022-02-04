@@ -65,22 +65,22 @@ To get result follow the message format
 
 example: *hsc 2021 raj 654321 987654321*
 Use first three letters of board, i.e.,
-Barisal -> bar
-Chittagong -> chi
-Comilla -> com
-Dhaka -> dha
-Dinajpur -> din
-Jessore -> jes
-Mymensingh -> mym
-Rajshahi -> raj
-Sylhet -> syl
-Madrasah -> mad
-Technical -> tec
-DIBS -> dib
+Barisal ➡ bar
+Chittagong ➡ chi
+Comilla ➡  com
+Dhaka ➡  dha
+Dinajpur ➡  din
+Jessore ➡  jes
+Mymensingh ➡  mym
+Rajshahi ➡  raj
+Sylhet ➡  syl
+Madrasah ➡ mad
+Technical ➡  tec
+DIBS ➡  dib
 
 Note: Case doesn't matter. You can use any case.
 
-Send *abar* or *retry* to resend last message
+Send __abar__ or __retry__ to resend last message
 If you find any issue with this bot feel free to raise an issue at <url>
 """
     update.message.reply_text(msg, parse_mode=telegram.ParseMode.MARKDOWN)
