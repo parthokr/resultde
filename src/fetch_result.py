@@ -33,6 +33,6 @@ def get_result(exam, year, board, roll, reg):
         courses = courses[13:]
     except:
         raise Exception('Something went wrong')
-    _result = (name, courses)
+    _result = (name, courses, result)
 
     return _result
