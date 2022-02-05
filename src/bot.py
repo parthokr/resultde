@@ -35,6 +35,13 @@ def any_msg(update: Update, context: CallbackContext) -> None:
     if split_msg[0].lower() == "resultde":
         try:
             exam = split_msg[1].lower()
+            if exam == 'sscvoc':
+                exam = 'ssc_voc'
+            elif exam == 'hscvoc':
+                exam = 'hsc_voc'
+            elif exam == 'hscdic':
+                exam = 'hsc_dic'
+
             year = split_msg[2]
             board = board_dict[split_msg[3].lower()]
             roll = split_msg[4]
@@ -61,7 +68,7 @@ example:
 *resultde hsc 2021 raj 654321 987654321*
 
 Use first three letters of board, i.e.,
-__Board list__
+====Board list====
 Barisal ➜ bar
 Chittagong ➜ chi
 Comilla ➜  com
@@ -75,8 +82,8 @@ Madrasah ➜ mad
 Technical ➜  tec
 DIBS ➜  dib
 
-__Exam list__
-jsc, ssc, ssc_voc, hsc, hsc_voc, hsc_dic, hsc
+====Exam list====
+jsc, ssc, sscvoc, hsc, hscvoc, hscdic, hsc
 
 Note: Case doesn't matter. You can use any case.
 
