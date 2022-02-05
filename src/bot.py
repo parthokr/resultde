@@ -61,16 +61,16 @@ example: *hsc 2021 raj 654321 987654321*
 Use first three letters of board, i.e.,
 Barisal ➜ bar
 Chittagong ➜ chi
-Comilla ➡  com
-Dhaka ➡  dha
-Dinajpur ➡  din
-Jessore ➡  jes
-Mymensingh ➡  mym
-Rajshahi ➡  raj
-Sylhet ➡  syl
-Madrasah ➡ mad
-Technical ➡  tec
-DIBS ➡  dib
+Comilla ➜  com
+Dhaka ➜  dha
+Dinajpur ➜  din
+Jessore ➜  jes
+Mymensingh ➜  mym
+Rajshahi ➜  raj
+Sylhet ➜  syl
+Madrasah ➜ mad
+Technical ➜  tec
+DIBS ➜  dib
 
 Note: Case doesn't matter. You can use any case.
 
