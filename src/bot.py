@@ -4,17 +4,12 @@ import pdfkit
 import telegram.ext
 from dotenv import load_dotenv
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler
+from telegram.ext import Updater, CallbackContext, MessageHandler
 
 from fetch_result import get_result
 
 load_dotenv()
 TOKEN = os.environ.get("TOKEN")
-
-import logging
-
-# logging.basicConfig(level=logging.DEBUG,
-#                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
 cache = {}
