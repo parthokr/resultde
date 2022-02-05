@@ -3,18 +3,12 @@ import os
 import telegram.ext
 from dotenv import load_dotenv
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler
+from telegram.ext import Updater, CallbackContext, MessageHandler
 
 from fetch_result import get_result
 
 load_dotenv()
 TOKEN = os.environ.get("TOKEN")
-
-import logging
-
-# logging.basicConfig(level=logging.DEBUG,
-#                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
 
 cache = {}
 
@@ -38,7 +32,7 @@ def any_msg(update: Update, context: CallbackContext) -> None:
         'tec': 'Technical',
         'dib': 'DIBS'
     }
-    if (split_msg[0].lower() == "resultde"):
+    if split_msg[0].lower() == "resultde":
         try:
             exam = split_msg[1].lower()
             year = split_msg[2]
@@ -56,15 +50,6 @@ def any_msg(update: Update, context: CallbackContext) -> None:
             result = "Something went wrong..."
 
         cache[update.effective_user.id] = split_msg
-        # pdfkit.from_string(_result[2], str(update.effective_user.id) + '.pdf')
-        # chat_id = update.message.chat_id
-        # file_id = open(str(update.effective_user.id) + '.pdf', 'rb')
-        # context.bot.sendDocument(
-        #     chat_id=chat_id,
-        #     caption=result,
-        #     document=file_id
-        # )
-        # file_id.close()
         update.message.reply_text(result)
         return
     msg = f"""
@@ -96,8 +81,6 @@ If you find any issue with this bot feel free to raise an issue at https://githu
 
 
 updater = Updater(TOKEN)
-# updater.dispatcher.add_handler(CommandHandler('hello', hello))
 updater.dispatcher.add_handler(MessageHandler(telegram.ext.Filters.text, any_msg))
-
 updater.start_polling()
 updater.idle()
