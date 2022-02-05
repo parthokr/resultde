@@ -47,11 +47,9 @@ def any_msg(update: Update, context: CallbackContext) -> None:
             roll = split_msg[4]
             reg = split_msg[5]
             _result = get_result(exam, year, board, roll, reg)
-            # print(_result)
             result = f'Name: {_result[0][0]}\n'
             for i in range(len(_result[1]) // 3):
                 result += _result[1][i * 3 + 1] + ": \t" + _result[1][i * 3 + 2] + "\n"
-            # print(result)
         except Exception as e:
             print(e)
             result = "Something went wrong..."
