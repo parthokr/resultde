@@ -1,6 +1,5 @@
 import requests
 import re
-from bs4 import BeautifulSoup
 
 
 def get_result(exam, year, board, roll, reg):
@@ -20,15 +19,14 @@ def get_result(exam, year, board, roll, reg):
         'value_s': str(sum(augend_addend)),
         'button2': 'Submit'
     }
-    # print(payload)
+
     result = s.post('http://www.educationboardresults.gov.bd/result.php', data=payload).text
-    # print(result)
 
     name = re.findall(r'<td width=\"39%\" align=\"left\" valign=\"middle\" bgcolor=\"#EEEEEE\">([\w\s\.]+)</td>',
                       result)
     courses = re.findall(r'<td align=\"left\" valign=\"middle\" bgcolor=\"#EEEEEE\">([\w\s\+\.,&\-]+)</td>', result)
     courses += re.findall(r'<td align=\"left\" valign=\"middle\" bgcolor=\"#DEE1E4\">([\w\s\+\.,&\-]+)</td>', result)
-    # print(courses)
+
     try:
         courses = courses[13:]
     except:
