@@ -59,8 +59,8 @@ To get result follow the message format
 
 example: *hsc 2021 raj 654321 987654321*
 Use first three letters of board, i.e.,
-Barisal ➡ bar
-Chittagong ➡ chi
+Barisal ➜ bar
+Chittagong ➜ chi
 Comilla ➡  com
 Dhaka ➡  dha
 Dinajpur ➡  din
