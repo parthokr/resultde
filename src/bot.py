@@ -1,14 +1,15 @@
 import os
+import pdfkit
 
 import telegram.ext
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler
 
 from fetch_result import get_result
 
-# load_dotenv()
-TOKEN = os.environ.get("RESULTDE_TOKEN")
+load_dotenv()
+TOKEN = os.environ.get("TOKEN")
 
 import logging
 
@@ -56,7 +57,16 @@ def any_msg(update: Update, context: CallbackContext) -> None:
             result = "Something went wrong..."
 
         cache[update.effective_user.id] = split_msg
-        update.message.reply_text(result)
+        pdfkit.from_string(_result[2], str(update.effective_user.id) + '.pdf')
+        chat_id = update.message.chat_id
+        file_id = open(str(update.effective_user.id) + '.pdf', 'rb')
+        context.bot.sendDocument(
+            chat_id=chat_id,
+            caption=result,
+            document=file_id
+        )
+        file_id.close()
+        # update.message.reply_text(result)
         return
     msg = f"""
 Hello *{update.effective_user.first_name}*
