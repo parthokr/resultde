@@ -33,7 +33,7 @@ def get_result(exam, year, board, roll, reg):
     courses += re.findall(r'<td align=\"left\" valign=\"middle\" bgcolor=\"#DEE1E4\">([\w\s\+\.,&\-]+)</td>', result)
 
     try:
-        courses = courses[13:]
+        courses = courses[courses.index('BANGLA') - 1:]
     except:
         raise Exception('Something went wrong')
     _result = (name, courses, result)
